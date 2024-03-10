@@ -21,7 +21,7 @@ jobs:
       - name: Set Azure subscription
         uses: azure/webapps-deploy@v2
         with:
-          app-name: GithubActionsApp
+          app-name: wep-integration
           package: src
           slot-name: 'production'
       - name: Logout of Azure
