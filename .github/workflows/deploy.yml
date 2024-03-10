@@ -21,7 +21,7 @@ jobs:
       - name: Set Azure subscription
         uses: azure/webapps-deploy@v2
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          app-name: GithubActionsApp
           package: src
           slot-name: 'production'
       - name: Logout of Azure
