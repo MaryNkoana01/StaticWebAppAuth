@@ -13,5 +13,8 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - run: |
-          az webapp list --query "[?state=='Running']"
+      # - run: |
+      #     az webapp list --query "[?state=='Running']"
+      - name: Deploy to Azure Web App
+        run: |
+          az webapp up --name GithubActionsApp --sku FREE --html
