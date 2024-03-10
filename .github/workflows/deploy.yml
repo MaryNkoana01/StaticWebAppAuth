@@ -22,7 +22,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: wep-integration
-          package: src
+          package: .
           slot-name: 'production'
       - name: Logout of Azure
         run: az logout
