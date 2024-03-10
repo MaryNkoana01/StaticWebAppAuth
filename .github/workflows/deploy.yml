@@ -15,16 +15,14 @@ jobs:
 
       # - run: |
       #     az webapp list --query "[?state=='Running']"
-      # - name: Deploy to Azure Web App
-      #   run: |
-      #     az webapp up --name GithubActionsApp --runtime node
-      - name: Set Azure subscription
-        # uses: azure/webapps-deploy@v2
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          app-name: wep-integration
-          package: .
-          slot-name: 'production'
+      - name: Deploy to Azure Web App
+        run: |
+          az webapp up --name GithubActionsApp --resource-group StaticWebAppResourceGroup
+      # - name: Set Azure subscription
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: wep-integration
+      #     package: .
+      #     slot-name: 'production'
       # - name: Logout of Azure
       #   run: az logout
