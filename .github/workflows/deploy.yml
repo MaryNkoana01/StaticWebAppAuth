@@ -11,10 +11,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    
-    - uses: azure/login@v1
+    - name: Login to Azure
+      uses: Azure/login@v1
+      env:
+        CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: $CREDENTIALS
     
-    - run: |
-        az webapp list --query "[?state=='Running']"
+
