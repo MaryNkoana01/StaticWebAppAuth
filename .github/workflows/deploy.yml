@@ -25,5 +25,5 @@ jobs:
           app-name: wep-integration
           package: .
           slot-name: 'production'
-      - name: Logout of Azure
-        run: az logout
+      # - name: Logout of Azure
+      #   run: az logout
