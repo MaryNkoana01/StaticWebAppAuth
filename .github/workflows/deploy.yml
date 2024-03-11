@@ -17,7 +17,7 @@ jobs:
       #     az webapp list --query "[?state=='Running']"
       - name: Deploy to Azure Web App
         run: |
-          az webapp up --name GithubActionsApp --runtime node
+          az webapp up --resource-group GithubActionsApp --runtime node
       # - name: Set Azure subscription
       #   uses: azure/webapps-deploy@v2
       #   with:
