@@ -15,15 +15,15 @@ jobs:
 
       # - run: |
       #     az webapp list --query "[?state=='Running']"
-      # - name: Deploy to Azure Web App
-      #   run: |
-      #     az webapp up --name GithubActionsApp --runtime node
-      - name: Set Azure subscription
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.APP_NAME }}
-          slot-name: ${{ env.SLOT_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      - name: Deploy to Azure Web App
+        run: |
+          az webapp up --name GithubActionsApp --runtime node
+      # - name: Set Azure subscription
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: ${{ env.APP_NAME }}
+      #     slot-name: ${{ env.SLOT_NAME }}
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: '.'
 
       - name: Logout of Azure
